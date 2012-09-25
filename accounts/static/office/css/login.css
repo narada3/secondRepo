@@ -1,0 +1,7 @@
+#login .form-actions > * {
+    float: right;
+}
+#login .form-actions > a {
+    padding-right: 10px;
+    line-height: 28px;
+}

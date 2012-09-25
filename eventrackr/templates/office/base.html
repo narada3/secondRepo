@@ -1,0 +1,119 @@
+{% load i18n %}
+{% load compress %}
+{% load menu_active_item %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Office" %} / {% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% compress css %}
+		<link rel="stylesheet" href="{{ STATIC_URL }}office/css/reset.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap-responsive.min.css" />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/jquery/css/jquery-ui-1.8.20.custom.css">
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/uniform.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/chosen.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/glyphicons.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/fullcalendar.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/admin.css" />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/office.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/unicorn.bs2.1.css" />
+
+    {% endcompress %}
+
+    {% compress js %}
+        <script src="{{ STATIC_URL }}office/js/excanvas.min.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-sliderAccess.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery/js/i18n/jquery.ui.datepicker-{{request.LANGUAGE_CODE}}.js"></script>
+
+        <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-timepicker-addon.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/backbone/underscore.js"></script>
+		<script src="{{ STATIC_URL }}office/js/html5.js"></script>
+		<script src="{{ STATIC_URL }}office/js/radio-checkbox.js"></script>
+		<script src="{{ STATIC_URL }}office/js/jquery-code.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.timelines.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.events.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.services.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.twitter.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.flickr.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.livestream.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.photo.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.facebook.js"></script>
+
+    {% endcompress %}
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+	<div class="overlay" style="display: none;"></div>	
+	{% comment %} Timeline form {% endcomment %}
+	{% include 'office/timeline-form.html' %}
+	
+	{% comment %} Event form {% endcomment %}
+	{% include 'office/event-form.html' %}
+	
+	{% comment %} Service form {% endcomment %}
+	{% include 'office/service-form.html' %}
+	
+	{% comment %} Twitter form {% endcomment %}
+	{% include 'office/twitter-form.html' %}
+	
+	{% comment %} Flickr form {% endcomment %}
+	{% include 'office/flickr-form.html' %}
+	
+	{% comment %} Livestream form {% endcomment %}
+	{% include 'office/livestream-form.html' %}
+	
+	{% comment %} Photo form {% endcomment %}
+	{% include 'office/photo-form.html' %}
+	
+	{% comment %} Facebook form {% endcomment %}
+	{% include 'office/facebook-form.html' %}
+	
+	<div class="popup popup-conformation" style="display: none;" id="confirmation">
+		<h1>Are you sure you want to delete this item?</h1>
+	       <form>
+	          <section class="last first">
+		          <button type="button" id="btnNo" class="btn btn-submit">No</button>
+		          <button type="button" id="btnYes" class="btn btn-submit btn-submit-1">Yes, delete</button>
+	          </section>
+	       </form>
+	</div>
+	
+	<div class="wrap-admin">
+		{% comment %} Header 
+			<div id="header">
+				<h1><a href="./dashboard.html">Unicorn Admin</a></h1>
+			</div>
+		{% endcomment %}
+
+		{% comment %} User Nav 
+			{% include 'office/user-nav.html' %}
+		{% endcomment %}
+
+		{% comment %} Sidebar {% endcomment %}
+		{% include 'office/sidebar.html' %}
+
+		{% comment %} Content {% endcomment %}
+		<div id="content" class="content">
+			{% block content %}{% endblock %}
+		</div>
+		
+		{% comment %} Socialbar {% endcomment %}
+		{% include 'office/social.html' %}
+	</div>
+</body>
+</html>

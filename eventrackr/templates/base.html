@@ -1,0 +1,58 @@
+{% load i18n %}
+{% load compress %}
+{% load menu_active_item %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Office" %} / {% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% compress css %}
+		<link rel="stylesheet" href="{{ STATIC_URL }}office/css/reset.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap-responsive.min.css" />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}lib/jquery/css/jquery-ui-1.8.20.custom.css">
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/uniform.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/chosen.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/glyphicons.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/fullcalendar.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/admin.css" />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/office.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/unicorn.bs2.1.css" />
+
+    {% endcompress %}
+
+    {% compress js %}
+        <script src="{{ STATIC_URL }}office/js/excanvas.min.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-sliderAccess.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery/js/i18n/jquery.ui.datepicker-{{request.LANGUAGE_CODE}}.js"></script>
+
+        <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery/js/jquery-ui-timepicker-addon.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="{{ STATIC_URL }}lib/backbone/underscore.js"></script>
+		<script src="{{ STATIC_URL }}office/js/html5.js"></script>
+		<script src="{{ STATIC_URL }}office/js/jquery-code.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.timelines.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.events.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.services.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.twitter.js"></script>
+		<script src="{{ STATIC_URL }}office/js/et.flickr.js"></script>
+
+    {% endcompress %}
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+</body>
+</html>

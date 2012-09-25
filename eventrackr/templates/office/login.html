@@ -1,0 +1,88 @@
+{% load i18n %}
+{% load compress %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Office" %} / {% trans "Login" %}</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% compress css %}
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap-responsive.min.css"/>
+
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}office/css/uniform.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}office/css/chosen.css"/>
+
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}office/css/unicorn.main.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}office/css/unicorn.grey.css" class="skin-color"/>
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}office/css/unicorn.bs2.1.css" />
+
+
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}office/css/login.css"/>
+    {% endcompress %}
+</head>
+<body>
+
+{% comment %} Content {% endcomment %}
+<div id="login">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3"></div>
+
+            <div class="span6">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-user"></i></span>
+                        <h5>{% trans "Welcome" %}</h5>
+                    </div>
+
+                    <div class="widget-content nopadding">
+                        <form action="." method="post" class="form-horizontal">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}" />
+
+                            <div class="control-group">
+                                <label class="control-label">{% trans "Username" %}</label>
+                                <div class="controls">
+                                    <input type="text" placeholder="{% trans "Enter your username" %}" name="username">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">{% trans "Password" %}</label>
+                                <div class="controls">
+                                    <input type="password" placeholder="{% trans "Enter your password" %}" name="password">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+                                <a href="#">{% trans "Forget password?" %}</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span3"></div>
+        </div>
+    </div>
+</div>
+
+{% compress js %}
+    <script src="{{ STATIC_URL }}lib/jquery/js/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}lib/jquery/js/jquery.ui.custom.js"></script>
+
+    <script src="{{ STATIC_URL }}lib/jquery/js/jquery.uniform.js"></script>
+
+    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap.min.js"></script>
+{% endcompress %}
+
+{% compress js %}
+    <script src="{{ STATIC_URL }}office/js/unicorn.js"></script>
+{% endcompress %}
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+{% extends 'office/base.html' %}
+
+{% load i18n %}
+{% block title %}{% trans "Timeline" %}{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    	<input type="hidden" id="page-timeline-id" value="{{ timeline.id }}">
+    	<input type="hidden" id="events-page-number" value="1">
+         <div class="panel-edit">
+            <span class="edit-event"></span>
+            <div class="panel-edit-icon"></div>
+             <ul>
+                <li><a class="panel-action-1" href="javascript:void('0');"></a></li>
+                <li><a class="panel-action-2" href="javascript:void('0');"></a></li>
+                <li><a class="panel-action-3" href="javascript:void('0');"></a></li>
+            </ul>
+        </div> 
+        <div class="timeline">
+            <div class="timeline-scale"></div>
+            <div class="timeline-interval"></div> 
+        </div>  
+        <div class="btn-group zome-btn btn-group-vertical ">
+              <button class="btn"><img width="14" src="img/zome1.png"></button>
+              <button class="btn btn-center"><img width="14" src="img/zome2.png"></button>
+              <button class="btn"><img  src="img/zome3.1.png"></button>
+       </div>  
+            <div class="row row-next-events">
+            <div class="wrap-row">
+                  <ul class="events-timeline mt-50" id="events-future"> 
+                  </ul>
+            </div>		  
+      </div>    
+            <div class="row"> 
+                <div class="pannel pannel-close">
+                        <button class="btn"><span></span></button>
+                        <div class="scroll">
+                           
+                            <div class="scale">
+                                <div class="event-bottom btn btn-1">
+                                  <div class="icon icon-grey"></div>
+                                   Future                        
+                                </div>
+                                <div class="event-bottom btn btn-2">
+                                  <div class="icon icon-grey"></div>
+                                   Present                     
+                                </div>
+                                  <div class="event-top btn btn-3">
+                                  <div class="icon icon-grey"></div>
+                                   Past                     
+                                </div>
+                                 <div class="event-top btn btn-4">
+                                  <div class="icon icon-grey"></div>
+                                   Start                     
+                                </div>
+                                <div class="event-current">
+                                   <div class="icon_scale"></div>
+                                   <div class="scale_title">
+                                       <div class="icon-current"></div>
+                                       <p>12:30 - 13:00 Event title lorem ipsum dolor sit amet </p> 
+                                   </div>                                           
+                                </div>
+                            </div>
+                      
+                    </div>
+                </div> 
+            <div class="wrap-row">
+    
+                 
+                <div class="navbar">
+                    <div class="navbar-inner">
+                   
+                        <ul class="nav">
+                          <li><a href="#"><span class="icon-1 visible-tablet"></span>All</a></li>
+                          <li> <a href="#"><span class="icon-2"></span>Live stream</a></li>
+                          <li class="active "><a href="#"><span class="icon-3"></span>Live Chat</a></li>
+                         
+                          
+                          <li class="hidden-phone"><a href="#"><span class="icon-4"></span>Live text</a></li>
+                          <li class="hidden-phone"><a href="#"><span class="icon-5"></span>Images</a></li>
+                          
+                          <li class="hidden-phone"><a href="#"><span class="icon-6"></span>Blogs</a></li>
+                          <li class="hidden-phone"><a href="#"><span class="icon-7"></span>Social networks</a></li>
+                          <li class="hidden-phone"><a href="#"><span class="icon-8"></span>RSS</a></li>
+                          <li class="last hidden-phone"><a href="#"><span class="icon-9"></span>Directors cut</a></li>          
+                        </ul>
+                    
+                    </div>
+                </div>
+                <!-- center column-->
+                <ul class="events-timeline-center" id="events-center">
+                    <li class="hidden-phone">
+                        <section class="event event-bottom">
+                             
+                            <div class="icon icon-grey"></div>
+                            <div class="block clearfix">
+            					<div class="left-column big">
+                                </div>
+                                <div class="right-column big">
+                                </div>
+                              
+                            </div>
+                        </section> 
+                    </li>
+                    
+                    <li id="livestream-content">
+                        <section class="event event-top">
+                             
+                            <div class="icon icon-grey"> </div>
+                            <header class="phone-right-time">
+                        			<h4 class="title"><a href="#">Live stream</a></h4>
+                                    <time class="time-event ">6 minutes ago</time>
+                                </header>
+                             <div class="block clearfix">                           
+                                <iframe width="713" height="440" src="http://cdn.livestream.com/embed/friendsofcoldhawaii?layout=4&amp;height=340&amp;width=560&amp;autoplay=false" style="border:0;outline:0" frameborder="0" scrolling="no"></iframe><div style="font-size: 11px;padding-top:10px;text-align:center;width:560px"></div>
+                            </div>
+                            <footer>
+                               <ul class="social-link">
+                            	<li><a href="" class="link-1"></a><div class="counter">5<span></span></div></li>
+                                <li><a href="" class="link-2"></a><div class="counter">100<span></span></div></li>
+                                <li><a href="" class="link-3"></a><div class="counter">20<span></span></div></li>
+                                <li><a href="" class="link-4"></a><div class="counter">5000<span></span></div></li>
+                            </ul>
+                            </footer>
+                        </section> 
+                    </li>
+
+                </ul>
+                
+                <!-- left column-->
+                <ul class="events-timeline" id="chatroll-content">
+					<li data-side="l">
+                        <section class="event event-left  phone-event-top">
+                             
+                            <div class="icon icon-grey top-70"></div>
+                            <header class="phone-right-time">
+            						<h4 class="title"><a href="#">Chatroll</a></h4>
+                                    <time class="time-event ">6 minutes ago</time>
+                                </header>
+                             <div class="block">                           
+                                <iframe width="325" height="225" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="http://chatroll.com/embed/chat/coldhawaii-world-cup?id=oSnXyZm0zl7&platform=html&w=$0"></iframe><br/><div style="font-size:0.9em;text-align:center;"></div>
+                            </div>
+                            <footer>
+                               <ul class="social-link">
+                            	<li><a href="" class="link-1"></a><div class="counter">5<span></span></div></li>
+                                <li><a href="" class="link-2"></a><div class="counter">100<span></span></div></li>
+                                <li><a href="" class="link-3"></a><div class="counter">20<span></span></div></li>
+                                <li><a href="" class="link-4"></a><div class="counter">5000<span></span></div></li>
+                            	</ul>
+                            </footer>
+                        </section> 
+                    </li>
+					<li data-side="r">
+                        <section class="event event-right  phone-event-top">
+                            <div class="icon icon-grey top-107"></div>
+                             <div class="block">                           
+                                <div style="width: 325px; height: 332px; background: #ccc;"></div>
+                            </div>
+
+                        </section> 
+                    </li> 
+                </ul>
+                <ul class="events-timeline" id="events-simple">                                               
+                </ul> 
+            </div>
+         </div>
+    </div>
+    {% comment %}
+    <div id="content-header">
+        <h1>{% trans "Events" %}</h1>
+    </div>
+    <div id="breadcrumb">
+        <a href="{% url office_dashboard %}" title="{% trans "Go to Home" %}" class="tip-bottom"><i class="icon-home"></i> {% trans "Home" %}</a>
+        <a href="{% url office_timeline_list %}" title="{% trans "Go to Timeline" %}" class="tip-bottom">{{ timeline.title }}</a>
+        <a href="{% url office_event_list timeline.pk %}" title="{% trans "Go to Events" %}" class="tip-bottom">{% trans "Events" %}</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-signal"></i></span>
+                        <h5>{% trans "Events" %}</h5>
+                        <div class="buttons"><a class="btn btn-mini" href="{% url office_event_create timeline.pk %}">{% trans "Add New" %}</a></div>
+                    </div>
+                    <div class="clearer"></div>
+                    <br><br><br>
+                    <div class="widget-content nopadding">
+                        <ul class="recent-posts">
+                            {% for item in object_list %}
+                            <li>
+                                <div class="article-post">
+                                    <span class="user-info"> {{ item.date_start }} – {{ item.date_end }}  </span>
+                                    <p>
+                                        <a href="#">{{ item.title }}</a>
+                                        <br/>
+                                        <small>{{ item.message }}</small>
+                                    </p>
+                                    <div class="row-fluid">
+                                        <div class="span6">
+                                            <a class="btn btn-primary btn-mini" href="{% url office_event_update timeline.pk item.pk %}">{% trans "Edit" %}</a>
+                                            <a class="btn btn-danger btn-mini" href="{% url office_event_delete timeline.pk item.pk %}">{% trans "Delete" %}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+<script type="text/javascript">
+	$(function() {
+		events.list();
+		services.menuList();
+		setInterval(function() {events.loadNewEvents();},30000);
+		events.setLoadPageInterval();
+		});
+</script>
+{% endblock %}

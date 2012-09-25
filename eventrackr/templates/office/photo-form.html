@@ -1,0 +1,68 @@
+<div class="popup" id="photo-form" style="display: none;">
+<a href="#" class="close-popup"></a> 
+	<h1>Add photos</h1>
+    <div class="form">
+       <form>
+       <section class="first">
+           <div class="row-form">
+          		<label>Service:</label>
+          		<div class="select">
+                  <div class="btn-group">
+                    <button class="btn btn-small">Service names</button>
+                    <button data-toggle="dropdown" class="btn btn-small dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                    </ul>
+                  </div><!-- /btn-group -->
+            	</div>            
+          </div>
+           <div class="row-form">
+          		<label>Time:</label>
+          		<div class="btn-date-group">
+					<input type="text" class="btn btn-date" value="mm:dd:yyyy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hh:mm:ss">       
+                </div>                        
+          </div>
+         
+          </section>
+          	
+           <section>
+            <div class="row-form">
+                 <label>Picture/video:</label>
+
+             <div class="row-form-right">
+               
+                    <div class="btn-group-add-img btn-group-vertical">
+                      <button class="btn" type="button">Browse</button>
+                      <button class="btn btn-add-img"><img src="{{ STATIC_URL }}office/img/add.png"></button>
+                      <button class="btn" type="button">Archive</button>
+                   </div>
+                   <div class="btn-group-radio">
+                        <div class="row-form">
+                            <input class="styled" type="radio" name="radio" checked>
+                            <label class="w-auto">collect all pics as one item</label>
+                        </div>
+                        <div class="row-form">
+                            <input class="styled" type="radio" name="radio" checked>
+                            <label class="w-auto">add items from actual 
+        recording time</label>
+                        </div>
+                    </div>
+              </div>	
+            </div>
+               <div class="row-form">
+               	<label>Text:</label>
+                 <textarea >Just the good ol' boys, never meanin' no harm. Beats all you've ever saw, been in trouble with the law since the day they was born. Straight'nin' the curve, flat'nin' the hills. Someday the mountain might get 'em, but the law never will. Makin' their way, the only way they know how, that's just a little bit more than the law will allow. Just good ol' boys, wouldn't change if they could, fightin' the system like a true modern day Robin Hood.</textarea>
+               </div>
+           
+            
+           </section>
+        
+           <section class="last">
+          <button class="btn btn-submit" type="submit">Save</button>
+         
+          </section>
+       </form>
+    </div>
+</div>

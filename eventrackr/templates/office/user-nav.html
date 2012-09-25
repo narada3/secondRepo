@@ -1,0 +1,8 @@
+{% load i18n %}
+<div id="user-nav" class="navbar">
+    <ul class="nav btn-group">
+        <li class="btn btn-mini btn-inverse" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">{{ user }}</span></a></li>
+        <li class="btn btn-mini btn-inverse"><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">{% trans "Settings" %}</span></a></li>
+        <li class="btn btn-mini btn-inverse"><a title="" href="{% url logout %}"><i class="icon icon-share-alt"></i> <span class="text">{% trans "Logout" %}</span></a></li>
+    </ul>
+</div>

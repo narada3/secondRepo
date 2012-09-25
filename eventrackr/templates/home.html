@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block title %}{% trans "Timeline" %}{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-header">
+        <h1>{% trans "Timeline" %}</h1>
+    </div>
+    <div id="breadcrumb">
+        <a href="#" title="{% trans "Go to Home" %}" class="tip-bottom"><i class="icon-home"></i> {% trans "Home" %}</a>
+        <a href="#" class="current">{% trans "Timeline" %}</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-signal"></i></span>
+                        <h5>Timelines</h5>
+                        <div class="buttons"><a class="btn btn-mini timeline-add" href="javascript: void('0');">{% trans "Add New" %}</a></div>
+                    </div>
+                    <div class="clearer"></div>
+                    <br><br><br>
+                    <div class="widget-content nopadding">
+                        <ul class="recent-posts">
+                            {% for item in object_list %}
+                                <li>
+                                    <div class="article-post">
+                                        <span class="user-info"> {{ item.date_start }} – {{ item.date_end }}  </span>
+                                        <p>
+                                            <a href="#">{{ item.title }}</a>
+                                            <br/>
+                                            <small>{{ item.description }}</small>
+                                        </p>
+                                        <div class="row-fluid">
+                                            <div class="span6">
+                                                <a class="btn btn-primary btn-mini timeline-edit" timeline-id="{{ item.id }}" href="javascript: void('0');">{% trans "Edit" %}</a>
+                                                {% comment %}
+	                                            {% if item.published_at %}
+	                                            {% else %}
+	                                                <a class="btn btn-success btn-mini" href="{% url office_timeline_publish item.pk %}">{% trans "Publish" %}</a>
+	                                            {% endif %}
+                                            {% endcomment %}
+                                                <a class="btn btn-danger btn-mini timeline-delete" timeline-id="{{ item.id }}" href="javascript: void('0');">{% trans "Delete" %}</a>
+                                            </div>
+                                            <div class="span6" align="right">
+                                                <a class="btn btn-warning btn-mini" href="{% url office_event_list item.pk %}">{% trans "View timeline" %}</a>
+                                                <a class="btn btn-warning btn-mini" href="{% url office_service_list item.pk %}">{% trans "View services" %}</a>
+                                                <a class="btn btn-warning btn-mini" href="{% url office_timeline_update_feed item.pk %}">{% trans "Refresh Feed" %}</a>
+                                                <a class="btn btn-warning btn-mini" href="{% url office_timeline_rebuild_feed item.pk %}">{% trans "Rebuild Feed" %}</a>
+                                                {#                                            <a class="btn btn-warning btn-mini" href="#">{% trans "Applications" %}</a>#}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

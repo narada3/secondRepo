@@ -1,0 +1,44 @@
+<div class="popup" id="livestream-form" style="display: none;">
+<a href="#" class="close-popup"></a> 
+	<h1>Edit Livestream account</h1>
+    <div class="form">
+       <form>
+       <section class="first">
+       	 
+           <div class="row-form">
+          		<label>Account-name:</label>
+          		<input type="text" id="livestream-account" class="span2" placeholder="My custom name">
+          </div>
+           <div class="row-form">
+          		<label>URL:</label>
+          		<input type="text" id="livestream-url" class="span2">               
+          </div>
+          <div class="row-form">
+          		<label>Username:</label>
+          		<input type="text" id="livestream-username" class="span2" placeholder="rg@nerdpeople.com">               
+          </div>
+           <div class="row-form">
+          		<label>Password:</label>
+          		<input type="password" id="livestream-password" class="span2" placeholder="password">               
+          </div>
+           <div class="row-form">
+          		<label>On air:</label>
+          		<div class="radio-choose" id="livestream-active">
+                    <input type="radio" name="livestream-active" value="0" />
+                    <div class="radio-item"><button class="btn scroll scroll-left"><img src="img/radio-choose.png"></button><span class="radio-label">off</span></div>
+                    <input style="display:none" type="radio" name="livestream-active" value="1" />
+                    <div style="display:none" class="radio-item"><span class="radio-label">on</span> <button class="btn scroll scroll-right"><img src="img/radio-choose.png"></button></div>
+				</div>            
+          </div>
+           <div class="row-form">
+          		<label>Show Chatroll:</label>
+          		<input type="checkbox" id="livestream-chatroll" class="styled" checked>               
+          </div>
+          </section>
+        
+          <section class="last">
+          	<button class="btn btn-submit" type="button">Save</button>
+          </section>
+       </form>
+    </div>
+</div>
