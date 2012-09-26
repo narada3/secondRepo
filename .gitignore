@@ -1,0 +1,4 @@
+local_settings.py
+*.pyc
+settings_local.py
+eventrackr/static/cache
