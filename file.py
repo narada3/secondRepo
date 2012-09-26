@@ -1,3 +1,3 @@
 #-*- coding: utf-8 -*-
-добавил в новой ветке new_feature
+new_feature
 fff
