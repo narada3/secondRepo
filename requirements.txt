@@ -1,6 +1,0 @@
-Django==1.4
-South>=0.7.6
-django-social-auth>=0.7.4
-django_compressor>=1.2
-tweepy>=1.4
-django-tastypie
